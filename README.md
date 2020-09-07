@@ -1,2 +1,2 @@
 # AeroAutomatedPlane
-Automated plane
+Automated plane for AeroUnwired NITC Club
