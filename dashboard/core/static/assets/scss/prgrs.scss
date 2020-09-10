@@ -1,0 +1,156 @@
+/** ============================
+ ** variable
+ ** ============================ */
+$circular-margin: 10px;
+$break-small: 320px;
+$break-large: 1100px;
+
+/** ============================
+ ** function circular-progress
+ ** ============================ */
+@function circular-progress($maxPercent, $percent, $color-bar, $color-back) {
+  $increment: 360 / $maxPercent;
+  $half: round($maxPercent / 2);
+  $background-image: '';
+  @if $percent < $half {
+    $nextdeg: 90deg + ($increment * $percent);
+    $background-image: 'linear-gradient(90deg, #{$color-back} 50%, transparent 50%, transparent),
+ linear-gradient(#{$nextdeg}, #{$color-bar} 50%, #{$color-back} 50%, #{$color-back})';
+
+  }
+  @else {
+    $nextdeg: -90deg + ($increment * ($percent - $half));
+    $background-image: 'linear-gradient(#{$nextdeg}, #{$color-bar} 50%, transparent 50%, transparent),
+ linear-gradient(270deg, #{$color-bar} 50%, #{$color-back} 50%, #{$color-back})';
+
+  }
+  @return unquote($background-image);
+}
+
+
+/** ============================
+ ** Mixins Circular Progress
+ ** ============================ */
+@mixin circular-progress($percent-num, $color1:"#03A9F4") {
+  //circular-progress function
+  //circular-progress($maxPercent, $percent, $color-bar, $color-back);
+  // background: circular-progress(100, $percent-num, #03A9F4, #E0E0E0);
+  background: circular-progress(100, $percent-num, $color1, #E0E0E0);
+  border-radius: 50%;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  height: 200px;
+  margin: 2em auto;
+  position: relative;
+  min-width: 200px;
+  margin: $circular-margin;
+  transition: all .3s linear;
+  &::before {
+    background-color: #FAFAFA;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    color: rgba(black, .54);
+    content: '#{$percent-num}%';
+    font-size: 72px;
+    font-weight: bold;
+    height: 100%;
+    left: 0;
+    line-height: 200px;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    transform: scale(.87);
+    width: 100%;
+  }
+  &:hover {
+    box-shadow: 0 0 100px 1px rgba(255, 214, 112, 0.35);
+  }
+}
+
+body {
+  background-color: #EEE;
+  font-family: Roboto;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  .title {
+    color: #5d5d5d;
+    text-align: center;
+    font-weight: normal;
+  }
+}
+
+.content {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  @media screen and (min-width: $break-large) {
+    justify-content: space-around;
+  }
+}
+
+.group {
+  margin: 10px;
+  
+  .circular-progress60 {
+    @include circular-progress(10, #FF70A6);
+  }
+  .circular-progress73 {
+    @include circular-progress(73, #FF9770);
+  }
+  .circular-progress75 {
+    @include circular-progress(75, #FF9770);
+  }
+  .circular-progress85 {
+    @include circular-progress(85, #70D6FF);
+  }
+  .circular-progress90 {
+    @include circular-progress(90, #70D6FF);
+  }
+  .circular-progress100 {
+    @include circular-progress(100, #C8E9A0);
+  }
+  
+  .circular-text {
+    text-align: center;
+    color: rgba(black, .6);
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+}
+
+.twitter {
+  background-color: #FAFAFA;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  color: rgba(black, .6);
+  display: block;
+  height: 36px;
+  line-height: 36px;
+  text-align: center;
+  text-decoration: none;
+  width: 140px;
+  border-radius: 2px;
+  margin: 1em auto;
+  transition: box-shadow .3s linear;
+  &:hover {
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+  }
+}
+
+#footer {
+  margin-top: 30px;
+}
+
+@keyframes turning_cw {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
