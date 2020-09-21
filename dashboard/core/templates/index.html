@@ -1,0 +1,152 @@
+{% extends "layouts/base.html" %}
+{% block title %} Dashboard {% endblock %}
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="card card-chart">
+            <div class="card-header ">
+                <div class="row">
+                    <div class="col-sm-6 text-left">
+                        <h5 class="card-category">Analysis</h5>
+                        <h2 class="card-title" id="alt_now">Altitude</h2>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
+                            <label class="btn btn-sm btn-primary btn-simple active" id="0">
+                                <input type="radio" name="options" checked>
+                                <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Refresh</span>
+                                <span class="d-block d-sm-none">
+                                    <i class="tim-icons icon-single-02"></i>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="chart-area">
+                    <canvas id="chartBig1"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-4">
+        <div class="card card-chart">
+            <div class="card-header">
+                <h5 class="card-category">Battery Status</h5>
+                <h3 class="card-title"><i class="tim-icons icon-bulb-63 text-primary"></i>
+                    <div id='bat_now'>Remaining 100%</div>
+                </h3>
+            </div>
+            <div class="card-body">
+                <div class="chart-area">
+                    <canvas id="chartLinePurple"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="card card-chart">
+            <div class="card-header">
+                <h5 class="card-category">Temperature Average - 5s</h5>
+                <h3 class="card-title"><i class="tim-icons icon-alert-circle-exc text-info"></i>
+                    <div id="temp_now">Temperature : 10C</div>
+                </h3>
+            </div>
+            <div class="card-body">
+                <div class="chart-area">
+                    <canvas id="CountryChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="card card-chart">
+            <div class="card-header">
+                <h5 class="card-category">Speed</h5>
+                <h3 class="card-title"><i class="tim-icons icon-send text-success"></i>
+                    <div id='spd_now'>0m/s</div>
+                </h3>
+            </div>
+            <div class="card-body">
+                <div class="chart-area">
+                    <canvas id="chartLineGreen"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="padding-left: 400px;">
+        <div>
+            Radio Signal Strength:
+        </div>
+        <div id="cont_rad" data-pct="100">
+            <svg id="svg" width="200" height="200" viewPort="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                <circle r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0"></circle>
+                <circle id="bar_rad" r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0"></circle>
+            </svg>
+        </div>
+    </div>
+    <div style="padding-left: 400px;">
+        <div>
+            Internet Signal Strength:
+        </div>
+        <div id="cont_int" data-pct="100">
+            <svg id="svg" width="200" height="200" viewPort="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                <circle r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0"></circle>
+                <circle id="bar_int" r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0"></circle>
+            </svg>
+        </div>
+    </div>
+    <input id="int_sig" name="percent_internet" type="hidden">
+    <input id="rad_sig" name="percent_internet" type="hidden">
+    <div class="col-lg-4" style="padding: 30px; width: 700px;">
+        <div class="card card-chart" style="width: 700px;">
+            <div class="card-header">
+                <h5 class="card-category">Plane Model</h5>
+                <h3 class="card-title">
+                    <div id="temp_now"> Visualisation</div>
+                </h3>
+            </div>
+            <div id="pid_graph" style="width: 500px; height: 500px ;padding-left: 130px;padding-top: 20px"></div>
+        </div>
+    </div>
+    <div class="col-lg-4" style="padding-top: 30px;padding-left: 300px;width: 700px;height: 600px;">
+        <div class="card card-chart" style="width: 700px;height: 600px;">
+            <div style="width: 300px;height: 300px; display: inline-block;padding: 0px;">
+                <div class="card-header">
+                    <h5 class="card-category">In Radians</h5>
+                    <h3 class="card-title">Pitch</h3>
+                </div>
+                <svg style="width: 700px;height: 600px;">
+                    <circle cx="150" cy="110" r="90" fill="#4eff02" />
+                    <circle cx="150" cy="110" r="5" fill="#02309b" />
+                    <circle cx="550" cy="110" r="90" fill="#4eff02" />
+                    <circle cx="550" cy="110" r="5" fill="#02309b" />
+                    <circle cx="350" cy="350" r="90" fill="#4eff02" />
+                    <circle cx="350" cy="350" r="5" fill="#02309b" />
+                </svg>
+                <div id="pitch_needle">
+                    <svg transform="translate(-245,-780)" style="width: 700px;height: 600px;">
+                        <path stroke="#0026ff" d="m332.55997,281.58735l62.99999,-58.85839l63,58.85839l-31.5,0l0,59.1416l-62.99999,0l0,-59.1416l-31.5,0z" stroke-width="3" fill="#4eff02" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+<script>
+$(document).ready(function() {
+    // Javascript method's body can be found in assets/js/demos.js
+    demo.initDashboardPageCharts();
+
+});
+</script>
+{% endblock javascripts %}

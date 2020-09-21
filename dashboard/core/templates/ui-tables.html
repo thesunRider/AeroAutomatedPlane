@@ -1,0 +1,83 @@
+{% extends 'layouts/base.html' %}
+{% block title %} UI Tables {% endblock %}
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+{% block content %}
+<style>
+.buttcntrl {
+    text-decoration: none;
+    color: #282923;
+    background: rgb(145, 92, 182);
+    padding: 15px 40px;
+    border-radius: 4px;
+    font-weight: normal;
+    text-decoration: none;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+
+
+.glowbutton:hover {
+    width: 200px;
+    color: #282923;
+
+}
+
+.buttcntrl:active {
+    width: 200px;
+    color: #BA01FF;
+    background: #ffffff;
+    -webkit-animation: neon6 1.5s ease-in-out infinite alternate;
+    animation: neon6 1.5s ease-in-out infinite alternate;
+}
+
+
+
+/*glow for webkit*/
+
+
+@-webkit-keyframes neon6 {
+    from {
+        box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
+    }
+
+    to {
+        box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00de, 0 0 35px #ff00de, 0 0 40px #ff00de, 0 0 50px #ff00de, 0 0 75px #ff00de;
+    }
+}
+
+/*glow for mozilla*/
+/*glow*/
+
+
+@keyframes neon6 {
+    from {
+        box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
+    }
+
+    to {
+        box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00de, 0 0 35px #ff00de, 0 0 40px #ff00de, 0 0 50px #ff00de, 0 0 75px #ff00de;
+    }
+}
+</style>
+<div class="row">
+    <div class="col-md-12">
+        <div class="card ">
+            <div class="card-header">
+                <h4 class="card-title"> Control Station</h4>
+            </div>
+            <div class="card-body">
+                <div id="container" style="width: 500px;height: 200px">
+                    <a class="buttcntrl glowbutton" style="position: relative; left: 30px;" target="_blank">UP</a>
+                    <a class="buttcntrl glowbutton" style="position: relative; left:-90px ;top:  70px;" target="_blank">DOWN</a>
+                    <a class="buttcntrl glowbutton" style="position: relative; left: -30px ;" target="_blank">LEFT</a>
+                    <a class="buttcntrl glowbutton" style="position: relative; left: -160px;top: 70px;" target="_blank">RIGHT</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}
