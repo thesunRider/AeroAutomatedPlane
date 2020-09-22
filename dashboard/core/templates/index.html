@@ -103,37 +103,53 @@
     </div>
     <input id="int_sig" name="percent_internet" type="hidden">
     <input id="rad_sig" name="percent_internet" type="hidden">
-    <div class="col-lg-4" style="padding: 30px; width: 700px;">
-        <div class="card card-chart" style="width: 700px;">
-            <div class="card-header">
+    <div class="col-lg-4" style="padding: 30px; width: 500px;">
+        <div class="card card-chart" style="width: 600px;">
+            <div class="card-header" style>
                 <h5 class="card-category">Plane Model</h5>
                 <h3 class="card-title">
                     <div id="temp_now"> Visualisation</div>
                 </h3>
             </div>
-            <div id="pid_graph" style="width: 500px; height: 500px ;padding-left: 130px;padding-top: 20px"></div>
+            <div id="pid_graph" style="width: 500px; height: 500px ;padding-left: 80px;padding-top: 20px"></div>
         </div>
     </div>
-    <div class="col-lg-4" style="padding-top: 30px;padding-left: 300px;width: 700px;height: 600px;">
-        <div class="card card-chart" style="width: 700px;height: 600px;">
+    <div class="col-lg-4" style="padding-top: 30px;padding-left: 250px;width: 500px;height: 500px;">
+        <div class="card card-chart" style="width: 575px;height: 582px;">
             <div style="width: 300px;height: 300px; display: inline-block;padding: 0px;">
-                <div class="card-header">
-                    <h5 class="card-category">In Radians</h5>
-                    <h3 class="card-title">Pitch</h3>
+                <div class="card-header" style="width:600px">
+                    <h5 class="card-category" style="padding-left: 0px;">In Radians</h5>
+                    <h3 class="card-title" style= "display:inline-block; width:180px;margin-left:-0px">Pitch</h3>
+                    <h3 class="card-title" style= "display: inline-block; width: 300px; padding-left:110px" >Yaw</h3>
                 </div>
-                <svg style="width: 700px;height: 600px;">
+                <svg style="width: 576px;height: 450px;">
                     <circle cx="150" cy="110" r="90" fill="#4eff02" />
                     <circle cx="150" cy="110" r="5" fill="#02309b" />
-                    <circle cx="550" cy="110" r="90" fill="#4eff02" />
-                    <circle cx="550" cy="110" r="5" fill="#02309b" />
-                    <circle cx="350" cy="350" r="90" fill="#4eff02" />
-                    <circle cx="350" cy="350" r="5" fill="#02309b" />
+                    <circle cx="450" cy="110" r="90" fill="#4eff02" />
+                    <circle cx="450" cy="110" r="5" fill="#0026ff" />
+                    <circle cx="300" cy="330" r="90" fill="#4eff02" />
+                    <circle cx="300" cy="330" r="5" fill="#0026ff" />
                 </svg>
                 <div id="pitch_needle">
-                    <svg transform="translate(-245,-780)" style="width: 700px;height: 600px;">
+                    <svg transform="translate(-245,-629)" style="width: 700px;height: 600px;">
                         <path stroke="#0026ff" d="m332.55997,281.58735l62.99999,-58.85839l63,58.85839l-31.5,0l0,59.1416l-62.99999,0l0,-59.1416l-31.5,0z" stroke-width="3" fill="#4eff02" />
                     </svg>
                 </div>
+                <div id="pitch_needle">
+                    <svg transform="translate(20,-1062)" style="width: 700px;height: 600px;">
+                        <path stroke="#0026ff" d="m 375 117 l 115 0" stroke-width="3" fill="#4eff02" />
+                        <path stroke="#0026ff" d="m 395 97 l 75 0" stroke-width="3" fill="#4eff02" />
+                        
+                    </svg>
+                </div>
+                <div id="pitch_needle">
+                    <svg transform="translate(-132,-1439)" style="width: 700px;height: 600px;">
+                        <path stroke="#0026ff" d="m 375 117 l 115 0" stroke-width="3" fill="#4eff02" />
+                        <path stroke="#0026ff" d="m 395 97 l 75 0" stroke-width="3" fill="#4eff02" />
+                        
+                    </svg>
+                </div>
+               
             </div>
         </div>
     </div>
