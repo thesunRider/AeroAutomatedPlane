@@ -17,4 +17,6 @@ urlpatterns = [
 
     #sensor sections
     url(r'^ajax/sensors/speed', read_speed, name='read_speed'),
+    url(r'^ajax/sensors/temp', read_temp, name='read_temp'),
+    url(r'^ajax/sensors/rand', read_rand, name='read_rand'),
 ]

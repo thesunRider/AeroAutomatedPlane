@@ -1,4 +1,4 @@
-    gradientBarChartConfiguration = {
+   gradientBarChartConfiguration = {
       maintainAspectRatio: false,
       legend: {
         display: false
@@ -46,7 +46,7 @@
       }
     };
 
-    var ctx = document.getElementById("CountryChart").getContext("2d");
+       var ctx = document.getElementById("rand_chart").getContext("2d");
 
     var gradientStroke = ctx.createLinearGradient(0, 230, 0, 50);
 
@@ -55,7 +55,7 @@
     gradientStroke.addColorStop(0, 'rgba(29,140,248,0)'); //blue colors
 
 
-    var temp_chart = new Chart(ctx, {
+    var chart_rand = new Chart(ctx, {
       type: 'bar',
       responsive: true,
       legend: {
@@ -64,7 +64,7 @@
       data: {
         labels: ['0', '5', '5', '5', '5', '5'],
         datasets: [{
-          label: "Temp Current",
+          label: "random label",
           fill: true,
           backgroundColor: gradientStroke,
           hoverBackgroundColor: gradientStroke,
@@ -80,29 +80,29 @@
 
 
 var zero_tmp = 5;
-temp_now = document.getElementById('temp_now');
+rand_shit = document.getElementById('rand_shit');
 
-function adddata_temp(){
+function adddata_rand(){
 
-  var value = getdata_temp();
-  temp_chart.data.labels.push(zero_tmp);
-  temp_chart.data.labels.splice(0, 1);
-  temp_chart.data.datasets[0].data.splice(0, 1);
-  //console.log(temp_chart.data.datasets[0].data);
-  temp_chart.data.datasets[0].data.push(value); 
+  var value = getdata_rand();
+  chart_rand.data.labels.push(zero_tmp);
+  chart_rand.data.labels.splice(0, 1);
+  chart_rand.data.datasets[0].data.splice(0, 1);
+  //console.log(chart_rand.data.datasets[0].data);
+  chart_rand.data.datasets[0].data.push(value); 
 
   
-  temp_now.innerHTML = "Temperature : " +value +"C";
-  temp_chart.update();
+  rand_shit.innerHTML = "Random label: " +value +"";
+  chart_rand.update();
   zero_tmp++;
 }
 
-function getdata_temp(){
+function getdata_rand(){
       $.ajax({
-        url: ', view/ajax/sensors/temp',
+        url: ', view/ajax/sensors/rand',
         success: function (data) {
             console.log(data.value);
-            out = data.temperture;
+            out = data.value;
         }
       });
     return out;
@@ -110,5 +110,5 @@ function getdata_temp(){
 
 var refresh_rate = 3000;
 setInterval(function(){
-  adddata_temp();
+  adddata_rand();
 },refresh_rate);
