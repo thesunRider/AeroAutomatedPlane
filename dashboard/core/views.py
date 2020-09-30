@@ -7,6 +7,13 @@ from django.http import JsonResponse
 
 import random
 import math
+import serial
 
 def read_speed(request):
-	return JsonResponse({'status_code':200,'value':math.ceil(random.random()*100)})
+	return JsonResponse({'status_code':200,'value':random.random()*100})
+
+def read_temp(request):
+	return JsonResponse({'status_code':200,'temperature':random.random()*100})
+
+def read_rand(request):
+	return JsonResponse({'status_code':200,'temperature':random.random()*100})	
