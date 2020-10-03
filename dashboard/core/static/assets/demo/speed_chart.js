@@ -88,9 +88,8 @@
 var zero_spd = 5;
 spd_now = document.getElementById('spd_now');
 
-function adddata_spd(){
-
-  var value = read_data_speed();
+const adddata_spd = async () => {
+  value = await read_data_speed();
   spd_chart.data.labels.push(zero_spd);
   spd_chart.data.labels.splice(0, 1);
   spd_chart.data.datasets[0].data.splice(0, 1);
@@ -103,19 +102,13 @@ function adddata_spd(){
   zero_spd++;
 }
 
-
-function read_data_speed(){
+const read_data_speed = async () => {
     $.ajax({
         url: '/ajax/sensors/speed',
         success: function (data) {
-            console.log(data.value);
-            out = data.value;
+            console.log('speed: '+data.value);
+            out1 = data.value;
         }
       });
-    return out;
+    return out1;
 }
-
-var refresh_rate = 500;
-setInterval(function(){
-  adddata_spd();
-},refresh_rate);
