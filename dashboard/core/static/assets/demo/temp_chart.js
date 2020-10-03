@@ -82,13 +82,11 @@
 var zero_tmp = 5;
 temp_now = document.getElementById('temp_now');
 
-function adddata_temp(){
-
-  var value = getdata_temp();
+const adddata_temp = async () => {
+  var value = await getdata_temp();
   temp_chart.data.labels.push(zero_tmp);
   temp_chart.data.labels.splice(0, 1);
   temp_chart.data.datasets[0].data.splice(0, 1);
-  //console.log(temp_chart.data.datasets[0].data);
   temp_chart.data.datasets[0].data.push(value); 
 
   
@@ -97,18 +95,14 @@ function adddata_temp(){
   zero_tmp++;
 }
 
-function getdata_temp(){
-      $.ajax({
-        url: ', view/ajax/sensors/temp',
+
+const getdata_temp = async () => {
+    $.ajax({
+        url: '/ajax/sensors/temp',
         success: function (data) {
-            console.log(data.value);
-            out = data.temperture;
+            console.log('tmp: '+data.tempr);
+            out2 = data.tempr; //change this variable always
         }
       });
-    return out;
+    return out2;
 }
-
-var refresh_rate = 3000;
-setInterval(function(){
-  adddata_temp();
-},refresh_rate);

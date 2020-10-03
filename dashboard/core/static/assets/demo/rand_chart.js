@@ -1,4 +1,4 @@
-   gradientBarChartConfiguration = {
+    gradientBarChartConfiguration = {
       maintainAspectRatio: false,
       legend: {
         display: false
@@ -46,7 +46,7 @@
       }
     };
 
-       var ctx = document.getElementById("rand_chart").getContext("2d");
+    var ctx = document.getElementById("randchart").getContext("2d");
 
     var gradientStroke = ctx.createLinearGradient(0, 230, 0, 50);
 
@@ -64,7 +64,7 @@
       data: {
         labels: ['0', '5', '5', '5', '5', '5'],
         datasets: [{
-          label: "random label",
+          label: "Temp Current",
           fill: true,
           backgroundColor: gradientStroke,
           hoverBackgroundColor: gradientStroke,
@@ -80,35 +80,29 @@
 
 
 var zero_tmp = 5;
-rand_shit = document.getElementById('rand_shit');
+randlbl = document.getElementById('randlabel');
 
-function adddata_rand(){
-
-  var value = getdata_rand();
+const adddata_rand = async () => {
+  var value = await getdata_rand();
   chart_rand.data.labels.push(zero_tmp);
   chart_rand.data.labels.splice(0, 1);
   chart_rand.data.datasets[0].data.splice(0, 1);
-  //console.log(chart_rand.data.datasets[0].data);
   chart_rand.data.datasets[0].data.push(value); 
 
   
-  rand_shit.innerHTML = "Random label: " +value +"";
+  randlbl.innerHTML = "Random: " +value +"data";
   chart_rand.update();
   zero_tmp++;
 }
 
-function getdata_rand(){
-      $.ajax({
-        url: ', view/ajax/sensors/rand',
+
+const getdata_rand = async () => {
+    $.ajax({
+        url: '/ajax/sensors/rand',
         success: function (data) {
-            console.log(data.value);
-            out = data.value;
+            console.log('tmp: '+data.value);
+            out3 = data.value; //change this variable always
         }
       });
-    return out;
+    return out3;
 }
-
-var refresh_rate = 3000;
-setInterval(function(){
-  adddata_rand();
-},refresh_rate);
