@@ -5,8 +5,8 @@
       },
 
       tooltips: {
-        backgroundColor: '#f5f5f5',
-        titleFontColor: '#333',
+        backgroundColor: '#f5f5e5',
+        titleFontColor: '#d966cf',
         bodyFontColor: '#666',
         bodySpacing: 4,
         xPadding: 12,
@@ -46,7 +46,7 @@
       }
     };
 
-    var ctx = document.getElementById("randchart").getContext("2d");
+    var ctx = document.getElementById("WindChart").getContext("2d");
 
     var gradientStroke = ctx.createLinearGradient(0, 230, 0, 50);
 
@@ -55,7 +55,7 @@
     gradientStroke.addColorStop(0, 'rgba(29,140,248,0)'); //blue colors
 
 
-    var chart_rand = new Chart(ctx, {
+    var chart_wind = new Chart(ctx, {
       type: 'bar',
       responsive: true,
       legend: {
@@ -80,29 +80,29 @@
 
 
 var zero_tmp = 5;
-randlbl = document.getElementById('randlabel');
+randlbl = document.getElementById('wind_now');
 
-const adddata_rand = async () => {
-  var value = await getdata_rand();
-  chart_rand.data.labels.push(zero_tmp);
-  chart_rand.data.labels.splice(0, 1);
-  chart_rand.data.datasets[0].data.splice(0, 1);
-  chart_rand.data.datasets[0].data.push(value); 
+const adddata_wind = async () => {
+  var value = await getdata_wind();
+  chart_wind.data.labels.push(zero_tmp);
+  chart_wind.data.labels.splice(0, 1);
+  chart_wind.data.datasets[0].data.splice(0, 1);
+  chart_wind.data.datasets[0].data.push(value); 
 
   
-  randlbl.innerHTML = "Random: " +value +"data";
-  chart_rand.update();
+  randlbl.innerHTML = "Wind: " +value +"m/s";
+  chart_wind.update();
   zero_tmp++;
 }
 
 
-const getdata_rand = async () => {
+const getdata_wind = async () => {
     $.ajax({
-        url: '/ajax/sensors/rand',
+        url: '/ajax/sensors/wind',
         success: function (data) {
             console.log('tmp: '+data.value);
-            out3 = data.value; //change this variable always
+            out127 = data.valu; //change this variable always
         }
       });
-    return out3;
+    return out127;
 }
