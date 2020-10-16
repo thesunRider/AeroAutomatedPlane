@@ -7,9 +7,9 @@ setInterval(function(){
 },500);
 
 setInterval(function(){
-    yaw.style.transform = "rotate("+Math.random()*100+"deg)";
+//    yaw.style.transform = "rotate("+Math.random()*100+"deg)";
     },500);
 
 setInterval(function(){
-    roll.style.transform = "rotate("+Math.random()*100+"deg)";
+//    roll.style.transform = "rotate("+Math.random()*100+"deg)";
     },500);
