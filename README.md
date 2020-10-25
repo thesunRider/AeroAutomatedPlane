@@ -34,12 +34,12 @@ We have now written and documented code to start the server using manage.py file
 
 
 #Authors\
-Surya
-Govind
-Govind J Krishnan
-Michael Antony
-Abhinand
-Adithya Sankar
-Benito Ullas
-Sai Vivek
-Vardha Anees
+Surya\
+Govind\
+Govind J Krishnan\
+Michael Antony\
+Abhinand\
+Adithya Sankar\
+Benito Ullas\
+Sai Vivek\
+Vardha Anees\
