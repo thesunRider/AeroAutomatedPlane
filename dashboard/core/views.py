@@ -10,7 +10,7 @@ import math
 import serial
 
 
-ser = serial.Serial('/dev/pts/14', 192000, timeout=1)
+ser = serial.Serial('/dev/pts/2', 192000, timeout=1)
 
 def read_speed(request):
 	x=ser.readline()
@@ -19,7 +19,7 @@ def read_speed(request):
 	return JsonResponse({'status_code':200,'value':ret})
 
 
-def read_temp(request):	
+def read_temp(request):
 	x=ser.readline()
 	ret = int(x.decode('utf-8').rstrip('\r\n'))
 	print("temp:",ret)
@@ -31,3 +31,9 @@ def read_rand(request):
 	ret = int(x.decode('utf-8').rstrip('\r\n'))
 	print("rand:",ret)
 	return JsonResponse({'status_code':200,'value':ret})
+
+def read_DP(request):
+	x = ser.readline()
+	ret = int(x.decode('utf-8').rstrip('\r\n')) # Default is utf-8, right?
+	print('rand:', ret)
+	return JsonResponse({'status_code': 200, 'diffpr': ret})
