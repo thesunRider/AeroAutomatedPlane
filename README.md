@@ -6,7 +6,7 @@ All source files(important files included are emulate.sh, manage.py, urls.py, in
 This README file
 
 #architecture\
-This project uses html and css to implement the front end of the website. Javascript is used to link it and dynamically transfer data to and from the backend to the website. Ajax is used to ensure speedy transmission of data between the front and back end. The back end is done using python with django framework. Python is used to connect with the sensors on the plane which has a raspberry pi micro controller to unify various functions and data.
+This project uses html and css to implement the front end of the website. Javascript is used to link it and dynamically transfer data to and from the backend to the website. Ajax is used to ensure speedy transmission of data between the front and back end. The back end is done using python with django framework. Python is used to connect with the sensors on the plane which has a raspberry pi(or arduino) micro controller to unify various functions and data.
 
 #requirements\
 Python3,html,css,Javascript,Django framework,Ajax,A Linux distro to start the server. 
@@ -19,7 +19,7 @@ We have now written and documented code to start the server using manage.py file
 
 >Linux OS is mandatory to start the server.
 
->If we use server machine to access the website then there will be a lot of computational demand.A minimum of 8gb or ram is therefore recommended.
+>If we use server machine to access the website then there will be a lot of computational demand.A minimum of 8gb ram is therefore recommended.
 
 #to do
 >An actual micro controller(like arduino or raspberry pi) is not used now as it is not available. It is simulated using python and emulate.sh file.
@@ -30,11 +30,8 @@ We have now written and documented code to start the server using manage.py file
 
 >The use of gps system needs to be implemented.
 
-
-
-
 #Authors\
-Surya\
+Surya
 Govind\
 Govind J Krishnan\
 Michael Antony\
@@ -42,4 +39,4 @@ Abhinand\
 Adithya Sankar\
 Benito Ullas\
 Sai Vivek\
-Vardha Anees\
+Vardha Anees
