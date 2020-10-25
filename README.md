@@ -1,6 +1,5 @@
 # AeroAutomatedPlane
-Automated plane project by AeroUnwired NITC Club
-  The aim of the project is to automate an RC aircraft. Making the sensor measurements in the plane readily availbale for a user to access via the internet. The user will also be able to control important aircraft functions via a device with internet connection and web browser which includes the likes of mobiles,pc etc. All the essential details of airplane sensors will be displayed in real-time on the website.As we dont have an arduino with us now we are simulating it using emulate.sh file. The project is collaborated by all authors using a GitHub group.
+Automated plane project by AeroUnwired NITC Club  The aim of the project is to automate an RC aircraft. Making the sensor measurements in the plane readily availbale for a user to access via the internet. The user will also be able to control important aircraft functions via a device with internet connection and web browser which includes the likes of mobiles,pc etc. All the essential details of airplane sensors will be displayed in real-time on the website.As we dont have an arduino with us now we are simulating it using emulate.sh file. The project is collaborated by all authors using a GitHub group.
 
 #included
 All source files(important files included are emulate.sh, manage.py, urls.py, index.html, scripts.html, views.py, other python files for each chart)
@@ -31,13 +30,13 @@ We have now written and documented code to start the server using manage.py file
 
 >The use of gps system needs to be implemented.
 
->
+
 
 
 #Authors
 Surya
 Govind
-Goving J Krishnan
+Govind J Krishnan
 Michael Antony
 Abhinand
 Adithya Sankar
