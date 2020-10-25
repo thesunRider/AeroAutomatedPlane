@@ -9,13 +9,13 @@ This README file
 This project uses html and css to implement the front end of the website. Javascript is used to link it and dynamically transfer data to and from the backend to the website. Ajax is used to ensure speedy transmission of data between the front and back end. The back end is done using python with django framework. Python is used to connect with the sensors on the plane which has a raspberry pi(or arduino) micro controller to unify various functions and data.
 
 ## Requirements
-Python3\
-HTML\
-CSS\ 
-Javascript\ 
-Django framework\
-Ajax\
-A linux distro to run the server
+>Python3
+>HTML
+>CSS
+>JavaScript 
+>Django framework
+>Ajax
+>A linux distro to run the server
 
 
 
