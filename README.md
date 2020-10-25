@@ -36,13 +36,13 @@ We have now written and documented code to start the server using manage.py file
 >If we use server machine to access the website then there will be a lot of computational demand.A minimum of 8gb ram is therefore recommended.
 
 ## To do
->An actual micro controller(like arduino or raspberry pi) is not used now as it is not available. It is simulated using python and emulate.sh file.
+--An actual micro controller(like arduino or raspberry pi) is not used now as it is not available. It is simulated using python and emulate.sh file.
 
->Adittional sensor data and respective charts/graphs have to be implemented in the website.
+--Adittional sensor data and respective charts/graphs have to be implemented in the website.
 
->Gyroscope sensor must be added.
+--Gyroscope sensor must be added.
 
->The use of gps system needs to be implemented.
+--The use of gps system needs to be implemented.
 
 ## Authors
 Surya
