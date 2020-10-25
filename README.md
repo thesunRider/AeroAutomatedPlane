@@ -9,7 +9,7 @@ This README file
 This project uses html and css to implement the front end of the website. Javascript is used to link it and dynamically transfer data to and from the backend to the website. Ajax is used to ensure speedy transmission of data between the front and back end. The back end is done using python with django framework. Python is used to connect with the sensors on the plane which has a raspberry pi(or arduino) micro controller to unify various functions and data.
 
 ## requirements
-Python3,html,css,Javascript,Django framework,Ajax,A Linux distro to start the server. 
+Python3, Html, Css, Javascript, Django framework, Ajax, a Linux distro to start the server. 
 
 ## progress
 We have now written and documented code to start the server using manage.py file. Simulate an arduino using emulate.sh file. The website can be accessed using any web browser.Linux OS is recommended to start the server and the website.The website can be accessed from any operating system. Linux is preferred due to its ability to manage servers well. The website is provided with a secure login system. A username and strong password is essential for a user to interact and access the website. Special care has been put in making the website aesthetic and still lightweight.The temperature, speed, altitude, sensor readings and battery status, signal strength, ping, 3d flight visualization have been implemented.The addition of other sensor readings and extra functionality will be added soon.
