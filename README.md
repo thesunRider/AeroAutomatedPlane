@@ -14,14 +14,14 @@ Python3,html,css,Javascript,Django framework,Ajax,A Linux distro to start the se
 #progress\
 We have now written and documented code to start the server using manage.py file. Simulate an arduino using emulate.sh file. The website can be accessed using any web browser.Linux OS is recommended to start the server and the website.The website can be accessed from any operating system. Linux is preferred due to its ability to manage servers well. The website is provided with a secure login system. A username and strong password is essential for a user to interact and access the website. Special care has been put in making the website aesthetic and still lightweight.The temperature, speed, altitude, sensor readings and battery status, signal strength, ping, 3d flight visualization have been implemented.The addition of other sensor readings and extra functionality will be added soon.
 
-#limitations\
+#limitations
 >An internet connection with good speed is essential to start the server.
 
 >Linux OS is mandatory to start the server.
 
 >If we use server machine to access the website then there will be a lot of computational demand.A minimum of 8gb or ram is therefore recommended.
 
-#to do\
+#to do
 >An actual micro controller(like arduino or raspberry pi) is not used now as it is not available. It is simulated using python and emulate.sh file.
 
 >Adittional sensor data and respective charts/graphs have to be implemented in the website.
