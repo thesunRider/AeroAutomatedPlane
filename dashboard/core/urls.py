@@ -19,5 +19,7 @@ urlpatterns = [
     url(r'^ajax/sensors/speed', read_speed, name='read_speed'),
     url(r'^ajax/sensors/temp', read_temp, name='read_temp'),
     url(r'^ajax/sensors/ping', read_ping, name='read_ping'),
+    url(r'^ajax/sensors/strength', read_strength, name='read_strength'),
+    url(r'^ajax/sensors/left', read_left, name='read_left'),
     url(r'^ajax/sensors/rand', read_rand, name='read_rand'),
 ]

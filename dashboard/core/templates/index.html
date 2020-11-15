@@ -37,7 +37,7 @@
     <div class="col-lg-4">
         <div class="card card-chart">
             <div class="card-header">
-                <h5 class="card-category">Battery Status</h5>
+                <h5 class="card-category">Battery Level</h5>
                 <h3 class="card-title"><i class="tim-icons icon-bulb-63 text-primary"></i>
                     <div id='bat_now'>Remaining 100%</div>
                 </h3>
@@ -45,6 +45,38 @@
             <div class="card-body">
                 <div class="chart-area">
                     <canvas id="chartLinePurple"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="row">
+    <div class="col-lg-4">
+        <div class="card card-chart">
+            <div class="card-header">
+                <h5 class="card-category">Battery Strength - 5s</h5>
+                <h3 class="card-title"><i class="tim-icons icon-bulb-63 text-primary"></i>
+                    <div id='strength_now'>Battery strength : 100%</div>
+                </h3>
+            </div>
+            <div class="card-body">
+                <div class="chart-area">
+                    <canvas id="chartLinePurplestrength"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="row">
+    <div class="col-lg-4">
+        <div class="card card-chart">
+            <div class="card-header">
+                <h5 class="card-category">Battery Time Left</h5>
+                <h3 class="card-title"><i class="tim-icons icon-bulb-63 text-primary"></i>
+                    <div id='left_now'>Time Left 100min</div>
+                </h3>
+            </div>
+            <div class="card-body">
+                <div class="chart-area">
+                    <canvas id="chartLinePurpleleft"></canvas>
                 </div>
             </div>
         </div>

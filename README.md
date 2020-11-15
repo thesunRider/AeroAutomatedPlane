@@ -6,7 +6,8 @@ All source files(important files included are emulate.sh, manage.py, urls.py, in
 This README file
 
 ## Architecture
-This project uses html and css to implement the front end of the website. Javascript is used to link it and dynamically transfer data to and from the backend to the website. Ajax is used to ensure speedy transmission of data between the front and back end. The back end is done using python with django framework. Python is used to connect with the sensors on the plane which has a raspberry pi(or arduino) micro controller to unify various functions and data.
+This project uses html and css to implement the front end of the website. Javascript is used to link it and dynamically transfer data to and from the backend to the website. Ajax is used to ensure speedy transmission of data between the front and back end. The back end is done using python with django framework. Sensors are connected to arduino. The data from the sensors is sent from arduino to raspberry pi on board the palne via com port. This data is accessed using python code and sent to the website.
+
 
 ## Requirements
 Python3
@@ -36,13 +37,13 @@ We have now written and documented code to start the server using manage.py file
 >If we use server machine to access the website then there will be a lot of computational demand.A minimum of 8gb ram is therefore recommended.
 
 ## To do
---An actual micro controller(like arduino or raspberry pi) is not used now as it is not available. It is simulated using python and emulate.sh file.
+>An actual micro controller(like arduino) is not used now as it is not available. It is simulated using python and emulate.sh file.
 
---Adittional sensor data and respective charts/graphs have to be implemented in the website.
+>Adittional sensor data and respective charts/graphs have to be implemented in the website.
 
---Gyroscope sensor must be added.
+>Gyroscope sensor must be added.
 
---The use of gps system needs to be implemented.
+>The use of gps system needs to be implemented.
 
 ## Authors
 Surya

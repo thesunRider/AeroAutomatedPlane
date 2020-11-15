@@ -30,7 +30,16 @@ def read_ping(request):
 	ret = int(x.decode('utf-8').rstrip('\r\n'))
 	print("temp:",ret)
 	return JsonResponse({'status_code':200,'value':ret})
-
+def read_strength(request):	
+	x=ser.readline()
+	ret = int(x.decode('utf-8').rstrip('\r\n'))
+	print("Battery strength:",ret)
+	return JsonResponse({'status_code':200,'strengthvalue':ret})
+def read_left(request):	
+	x=ser.readline()
+	ret = int(x.decode('utf-8').rstrip('\r\n'))
+	print("Battery left:",ret)
+	return JsonResponse({'status_code':200,'leftvalue':ret})
 def read_rand(request):
 	x=ser.readline()
 	ret = int(x.decode('utf-8').rstrip('\r\n'))
