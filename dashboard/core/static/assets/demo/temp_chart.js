@@ -80,6 +80,7 @@
 
 
 var zero_tmp = 5;
+var temp_lmt = 100; // temperature limit set
 temp_now = document.getElementById('temp_now');
 
 const adddata_temp = async () => {
@@ -89,10 +90,18 @@ const adddata_temp = async () => {
   temp_chart.data.datasets[0].data.splice(0, 1);
   temp_chart.data.datasets[0].data.push(value); 
 
-  
-  temp_now.innerHTML = "Temperature : " +value +"C";
-  temp_chart.update();
-  zero_tmp++;
+  if(value<temp_lmt){
+  	temp_now.innerHTML = "Temperature : " +value +"C";
+  	temp_chart.update();
+  	zero_tmp++;
+  }
+  else{
+	temp_now.innerHTML = "Overheating!!";
+  	temp_chart.update();
+  	zero_tmp++;
+  }
+ 
+
 }
 
 
