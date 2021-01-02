@@ -10,7 +10,7 @@ import math
 import serial
 
 
-ser = serial.Serial('/dev/pts/2', 192000, timeout=1)
+ser = serial.Serial('/dev/pts/5', 192000, timeout=1)
 
 def read_speed(request):
 	x=ser.readline()
