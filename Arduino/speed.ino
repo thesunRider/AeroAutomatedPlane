@@ -15,7 +15,6 @@ void loop()
    if (gps.encode(gpssoft.read())){
      if (gps.location.isUpdated())
   {
-    Serial.print("MPS="); 
     Serial.println(gps.speed.mps());
   }
    }
