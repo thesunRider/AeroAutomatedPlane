@@ -76,11 +76,40 @@
         }]
       },
       options: gradientBarChartConfiguration
-    });
+    }
+  );
+  
 
 
 var zero_tmp = 5;
+var temp_lmt = 100; // temperature limit set
+var temp_flag = false;
 temp_now = document.getElementById('temp_now');
+
+temp ={
+  
+  showNotification: function(from, align) {
+    $.notify({
+      icon: "tim-icons icon-bell-55",
+      message: "<b>Overheating!!</b>"
+
+    }, 
+    {
+      type: type[3],
+      timer: 1000,
+      placement: {
+        from: from,
+        align: align
+      },
+      onShow: function(){
+        temp_flag = true;
+      },
+      onClose: function(){
+        temp_flag = false;
+      }
+    });
+  }
+}
 
 const adddata_temp = async () => {
   var value = await getdata_temp();
@@ -89,10 +118,21 @@ const adddata_temp = async () => {
   temp_chart.data.datasets[0].data.splice(0, 1);
   temp_chart.data.datasets[0].data.push(value); 
 
-  
-  temp_now.innerHTML = "Temperature : " +value +"C";
-  temp_chart.update();
-  zero_tmp++;
+  if(value<temp_lmt){
+  	temp_now.innerHTML = "Temperature : " +value +"C";
+  	temp_chart.update();
+  	zero_tmp++;
+  }
+  else{
+    temp_now.innerHTML = "Overheating : " +value +"C";
+    if (temp_flag == false){
+      temp.showNotification('top','center');
+    }
+  	temp_chart.update();
+  	zero_tmp++;
+  }
+ 
+
 }
 
 
