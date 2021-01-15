@@ -12,7 +12,6 @@ void loop() {
   sensorInput = analogRead(sensePin);    //read the analog sensor and store it
   temp = map(sensorInput, 0, 1024, -40, 125);         //Convert to degrees 
  
-  Serial.print("Current Temperature: ");
   Serial.println(temp);
   delay(500);
 }

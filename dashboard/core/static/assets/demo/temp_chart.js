@@ -83,7 +83,7 @@
 
 var zero_tmp = 5;
 var temp_lmt = 100; // temperature limit set
-var flag = false;
+var temp_flag = false;
 temp_now = document.getElementById('temp_now');
 
 temp ={
@@ -102,10 +102,10 @@ temp ={
         align: align
       },
       onShow: function(){
-        flag = true;
+        temp_flag = true;
       },
       onClose: function(){
-        flag = false;
+        temp_flag = false;
       }
     });
   }
@@ -125,7 +125,7 @@ const adddata_temp = async () => {
   }
   else{
     temp_now.innerHTML = "Overheating : " +value +"C";
-    if (flag == false){
+    if (temp_flag == false){
       temp.showNotification('top','center');
     }
   	temp_chart.update();
